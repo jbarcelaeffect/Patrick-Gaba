@@ -71,7 +71,7 @@ nav{display:flex;align-items:center;gap:28px;padding-block:22px;transition:paddi
 
 /* ticker */
 .ticker{border-top:1px solid var(--line);overflow:hidden;padding-block:16px;white-space:nowrap}
-.track{display:inline-flex;gap:40px;animation:marq 38s linear infinite;font-family:var(--mono);font-size:13px;color:var(--muted)}
+.track{display:inline-flex;gap:40px;letter-spacing:.02em;animation:marq 38s linear infinite;font-family:var(--mono);font-size:13px;color:var(--muted)}
 .track span b{color:var(--fg);font-weight:500;margin-left:8px}
 .track .u{color:var(--good)} .track .dn{color:var(--bad)}
 .ticker:hover .track{animation-play-state:paused}
@@ -335,8 +335,8 @@ if(motion&&matchMedia("(hover:hover)").matches){
 }
 
 /* ticker */
-const tick=[["ROAS","4.21x","▲ 3.1%","u"],["CPA","₱1,166","▼ 4.2%","u"],["CTR","3.3%","▲ 0.3 pts","u"],["Spend","₱1.88M","▲ 9.4%","u"],["PMax ROAS","3.8x","▼ 11.2%","dn"],["TikTok CPA","₱2,851","▲ 18.0%","dn"],["Search ROAS","5.6x","▲ 6.0%","u"],["Meta CPM","₱142","▼ 2.5%","u"]];
-const tHtml=tick.map(t=>`<span>${t[0]}<b>${t[1]}</b> <em class="${t[3]}" style="font-style:normal">${t[2]}</em></span>`).join("");
+const tick=[["Google Ads","Ads"],["Google Ads Editor","Ads"],["Merchant Center","Feeds"],["Google Analytics 4","Analytics"],["Google Tag Manager","Tracking"],["Tag Assistant","Tracking"],["Meta Ads Manager","Ads"],["Meta Events Manager","Tracking"],["Looker Studio","Reporting"],["Google Sheets","Reporting"],["Salesforce","CRM"],["HubSpot","CRM"],["Zendesk","CRM"]];
+const tHtml=tick.map(t=>`<span><b>${t[0]}</b> <em style="font-style:normal;color:var(--accent);margin-left:6px">${t[1]}</em><i style="font-style:normal;margin-left:40px;color:var(--line)">/</i></span>`).join("");
 document.getElementById("track").innerHTML=tHtml+tHtml;
 
 /* reveal + counters */
